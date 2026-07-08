@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Itzel Tenorio — Asesoría de Extranjería</title>
+<meta name="description" content="Consultoría integral para personas extranjeras que desean vivir, trabajar, emprender o invertir en España. Atención online y presencial.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B2A3D;
+    --ink-soft:#324055;
+    --brass:#B8863B;
+    --brass-light:#D9AE6E;
+    --sage:#697A5E;
+    --parchment:#F7F3EC;
+    --parchment-deep:#EFE8D9;
+    --paper:#FDFCFA;
+    --charcoal:#2B2B28;
+    --line:#DCD3C0;
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--parchment);
+    color:var(--charcoal);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    color:var(--ink);
+    margin:0;
+    line-height:1.15;
+  }
+  a{color:inherit;}
+  .eyebrow{
+    font-family:'Space Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--brass);
+    font-weight:700;
+  }
+  .container{
+    max-width:1160px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+  section{padding:96px 0;}
+  img,svg{max-width:100%;}
+  button{font-family:inherit;cursor:pointer;}
+  :focus-visible{outline:2px solid var(--brass); outline-offset:3px;}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(247,243,236,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 0;
+  }
+  .logo{
+    display:flex; align-items:center; gap:10px;
+    font-family:'Fraunces', serif; font-weight:600; font-size:1.25rem; color:var(--ink);
+    text-decoration:none;
+  }
+  .logo .stamp-mini{width:34px; height:34px; flex-shrink:0;}
+  nav ul{
+    display:flex; gap:32px; list-style:none; margin:0; padding:0;
+  }
+  nav a{
+    text-decoration:none; color:var(--ink-soft); font-size:0.95rem; font-weight:500;
+    position:relative; padding:4px 0;
+  }
+  nav a:hover{color:var(--brass);}
+  .nav-cta{
+    display:flex; align-items:center; gap:14px;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:11px 22px;
+    border-radius:var(--radius);
+    font-weight:600; font-size:0.92rem;
+    text-decoration:none; border:1px solid transparent;
+    transition:transform .15s ease, background .15s ease, border-color .15s ease;
+  }
+  .btn-primary{background:var(--ink); color:var(--paper);}
+  .btn-primary:hover{background:var(--ink-soft); transform:translateY(-1px);}
+  .btn-outline{border-color:var(--ink); color:var(--ink); background:transparent;}
+  .btn-outline:hover{background:var(--ink); color:var(--paper);}
+  .btn-whatsapp{background:#3E5C3A; color:var(--paper);}
+  .btn-whatsapp:hover{background:#33492F; transform:translateY(-1px);}
+  .menu-toggle{display:none; background:none; border:none;}
+  .menu-toggle span{display:block; width:24px; height:2px; background:var(--ink); margin:5px 0;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:88px 0 100px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:64px; align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 4.4vw, 3.6rem);
+    margin-top:14px;
+    letter-spacing:-0.01em;
+  }
+  .hero p.lead{
+    font-size:1.14rem; color:var(--ink-soft); max-width:52ch; margin-top:20px;
+  }
+  .hero-actions{
+    display:flex; gap:16px; margin-top:34px; flex-wrap:wrap;
+  }
+  .hero-trust{
+    display:flex; gap:28px; margin-top:48px; flex-wrap:wrap;
+  }
+  .hero-trust div{font-size:0.86rem; color:var(--ink-soft); display:flex; align-items:center; gap:8px;}
+  .hero-trust svg{width:18px; height:18px; color:var(--sage); flex-shrink:0;}
+  .hero-visual{
+    display:flex; align-items:center; justify-content:center; position:relative;
+  }
+  .stamp-large{width:100%; max-width:340px; animation:rotate-slow 40s linear infinite;}
+  @keyframes rotate-slow{ to { transform:rotate(360deg);} }
+  @media (prefers-reduced-motion:reduce){ .stamp-large{animation:none;} }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section-head{max-width:640px; margin-bottom:56px;}
+  .section-head h2{font-size:clamp(1.8rem,3vw,2.4rem); margin-top:12px;}
+  .section-head p{color:var(--ink-soft); margin-top:16px; font-size:1.03rem;}
+  .center{text-align:center; margin-left:auto; margin-right:auto;}
+
+  /* ---------- SOBRE NOSOTROS ---------- */
+  .about{background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .about-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:start;}
+  .about-grid p{color:var(--ink-soft); margin-top:18px; font-size:1.05rem;}
+  .values-list{list-style:none; margin:8px 0 0; padding:0; display:flex; flex-direction:column; gap:22px;}
+  .values-list li{display:flex; gap:16px;}
+  .values-list .num{
+    font-family:'Space Mono', monospace; color:var(--brass); font-weight:700; font-size:0.9rem;
+    border:1px solid var(--brass-light); border-radius:50%; width:30px; height:30px;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .values-list strong{color:var(--ink); display:block; margin-bottom:2px; font-size:0.98rem;}
+  .values-list span{color:var(--ink-soft); font-size:0.92rem;}
+
+  /* ---------- COMO TRABAJAMOS (route) ---------- */
+  .route{position:relative;}
+  .route-line{
+    position:absolute; left:29px; top:14px; bottom:14px; width:2px;
+    background-image:linear-gradient(var(--brass-light) 60%, rgba(0,0,0,0) 0%);
+    background-size:2px 12px; background-repeat:repeat-y;
+  }
+  .route-steps{display:flex; flex-direction:column; gap:44px; position:relative;}
+  .route-step{display:grid; grid-template-columns:60px 1fr; gap:24px; align-items:flex-start;}
+  .route-pin{
+    width:60px; height:60px; border-radius:50%;
+    background:var(--paper); border:2px solid var(--brass);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Space Mono', monospace; font-weight:700; color:var(--brass); font-size:1.1rem;
+    position:relative; z-index:1;
+  }
+  .route-step h3{font-size:1.15rem; margin-bottom:6px;}
+  .route-step p{color:var(--ink-soft); margin:0; font-size:0.98rem;}
+
+  /* ---------- SERVICIOS ---------- */
+  .services{background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .service-tabs{display:flex; gap:10px; margin-bottom:40px; flex-wrap:wrap;}
+  .tab-btn{
+    padding:10px 20px; border-radius:999px; border:1px solid var(--line);
+    background:transparent; font-weight:600; font-size:0.9rem; color:var(--ink-soft);
+  }
+  .tab-btn.active{background:var(--ink); color:var(--paper); border-color:var(--ink);}
+  .service-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:20px;
+  }
+  .service-card{
+    background:var(--parchment); border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px; transition:border-color .15s ease, transform .15s ease;
+  }
+  .service-card:hover{border-color:var(--brass); transform:translateY(-2px);}
+  .service-card .icon{width:30px; height:30px; color:var(--sage); margin-bottom:14px;}
+  .service-card h3{font-size:1.04rem; margin-bottom:8px; font-weight:600;}
+  .service-card p{margin:0; font-size:0.9rem; color:var(--ink-soft);}
+  .tab-panel{display:none;}
+  .tab-panel.active{display:block;}
+
+  /* ---------- POR QUE ELEGIRNOS ---------- */
+  .why-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:28px;}
+  .why-card{padding:6px;}
+  .why-card .icon{width:34px; height:34px; color:var(--brass); margin-bottom:16px;}
+  .why-card h3{font-size:1.06rem; margin-bottom:8px;}
+  .why-card p{margin:0; color:var(--ink-soft); font-size:0.93rem;}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .faq-list{max-width:800px; margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{
+    width:100%; text-align:left; background:none; border:none;
+    padding:22px 0; display:flex; justify-content:space-between; align-items:center;
+    font-family:'Fraunces', serif; font-size:1.08rem; color:var(--ink); font-weight:500;
+  }
+  .faq-q .plus{font-family:'Space Mono',monospace; color:var(--brass); font-size:1.3rem; transition:transform .2s ease;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .25s ease;}
+  .faq-a p{padding-bottom:22px; margin:0; color:var(--ink-soft); font-size:0.97rem; max-width:70ch;}
+
+  /* ---------- CITA / CALENDAR ---------- */
+  .booking{
+    display:grid; grid-template-columns:1fr 1fr; gap:0;
+    border:1px solid var(--line); background:var(--paper); border-radius:var(--radius); overflow:hidden;
+  }
+  .booking-info{padding:44px; background:var(--ink); color:var(--parchment);}
+  .booking-info h3{color:var(--paper); font-size:1.5rem;}
+  .booking-info p{color:#C7CEDA; margin-top:14px; font-size:0.96rem;}
+  .booking-info ul{list-style:none; padding:0; margin:26px 0 0; display:flex; flex-direction:column; gap:14px;}
+  .booking-info li{display:flex; gap:10px; font-size:0.92rem; color:#DDE2EA;}
+  .booking-info svg{width:18px; height:18px; color:var(--brass-light); flex-shrink:0;}
+  .booking-cal{padding:44px;}
+  .cal-header{display:flex; align-items:center; justify-content:space-between; margin-bottom:18px;}
+  .cal-header button{background:none; border:1px solid var(--line); border-radius:50%; width:30px; height:30px;}
+  .cal-grid{display:grid; grid-template-columns:repeat(7,1fr); gap:6px; text-align:center;}
+  .cal-grid .dow{font-family:'Space Mono',monospace; font-size:0.68rem; color:var(--ink-soft); padding-bottom:6px;}
+  .cal-day{
+    aspect-ratio:1; display:flex; align-items:center; justify-content:center;
+    border-radius:50%; font-size:0.88rem; border:1px solid transparent; background:none;
+    color:var(--charcoal);
+  }
+  .cal-day.avail{background:var(--parchment-deep); cursor:pointer;}
+  .cal-day.avail:hover{background:var(--brass-light); color:var(--ink);}
+  .cal-day.selected{background:var(--brass); color:var(--paper); font-weight:700;}
+  .cal-day.disabled{color:#C9C2B0;}
+  .slots{display:flex; gap:10px; margin-top:20px; flex-wrap:wrap;}
+  .slot{
+    padding:8px 14px; border:1px solid var(--line); border-radius:999px; font-size:0.85rem; background:none;
+  }
+  .slot.active{background:var(--ink); color:var(--paper); border-color:var(--ink);}
+  .cal-confirm{margin-top:22px; font-size:0.86rem; color:var(--ink-soft);}
+
+  /* ---------- CONTACTO / FORM ---------- */
+  .contact{background:var(--paper); border-top:1px solid var(--line);}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
+  form{display:flex; flex-direction:column; gap:18px;}
+  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  label{font-size:0.82rem; font-weight:600; color:var(--ink); margin-bottom:6px; display:block;}
+  input, select, textarea{
+    width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:var(--radius);
+    background:var(--parchment); font-family:'Inter',sans-serif; font-size:0.95rem; color:var(--charcoal);
+  }
+  input:focus, select:focus, textarea:focus{border-color:var(--brass); outline:none;}
+  textarea{resize:vertical; min-height:110px;}
+  .form-note{font-size:0.8rem; color:var(--ink-soft); margin-top:-4px;}
+  .contact-details{display:flex; flex-direction:column; gap:26px;}
+  .contact-detail{display:flex; gap:16px;}
+  .contact-detail .icon{width:22px; height:22px; color:var(--brass); flex-shrink:0; margin-top:2px;}
+  .contact-detail h4{font-size:0.98rem; margin-bottom:4px;}
+  .contact-detail p{margin:0; color:var(--ink-soft); font-size:0.92rem;}
+  .social-row{display:flex; gap:12px; margin-top:6px;}
+  .social-row a{
+    width:38px; height:38px; border:1px solid var(--line); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; color:var(--ink);
+  }
+  .social-row a:hover{background:var(--ink); color:var(--paper);}
+  .social-row svg{width:17px; height:17px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink); color:#B8C0CE; padding:56px 0 28px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px;}
+  .footer-logo{font-family:'Fraunces',serif; color:var(--paper); font-size:1.2rem; font-weight:600;}
+  footer p{font-size:0.88rem; margin-top:14px; max-width:38ch; color:#9CA6B8;}
+  footer h5{font-family:'Space Mono',monospace; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--brass-light); margin-bottom:16px;}
+  footer ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;}
+  footer a{text-decoration:none; font-size:0.88rem; color:#B8C0CE;}
+  footer a:hover{color:var(--paper);}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.1); margin-top:44px; padding-top:22px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    font-size:0.8rem; color:#7C8598;
+  }
+  .legal-links{display:flex; gap:18px; flex-wrap:wrap;}
+
+  /* ---------- WHATSAPP FLOATING ---------- */
+  .whatsapp-float{
+    position:fixed; bottom:24px; right:24px; z-index:80;
+    width:60px; height:60px; border-radius:50%; background:#3E5C3A;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 24px rgba(0,0,0,0.25); text-decoration:none;
+    animation:pulse-wa 2.8s ease infinite;
+  }
+  .whatsapp-float svg{width:30px; height:30px; color:#fff;}
+  @keyframes pulse-wa{ 0%,100%{box-shadow:0 8px 24px rgba(0,0,0,0.25);} 50%{box-shadow:0 8px 28px rgba(62,92,58,0.55);} }
+  @media (prefers-reduced-motion:reduce){ .whatsapp-float{animation:none;} }
+
+  /* ---------- MODAL (legal placeholders) ---------- */
+  .modal-overlay{
+    position:fixed; inset:0; background:rgba(27,42,61,0.55); z-index:200;
+    display:none; align-items:center; justify-content:center; padding:24px;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal{
+    background:var(--paper); max-width:560px; width:100%; max-height:80vh; overflow-y:auto;
+    padding:40px; border-radius:var(--radius); position:relative;
+  }
+  .modal-close{position:absolute; top:18px; right:18px; background:none; border:none; font-size:1.4rem; color:var(--ink-soft);}
+  .modal h3{margin-bottom:16px;}
+  .modal p{color:var(--ink-soft); font-size:0.92rem; margin-bottom:12px;}
+
+  .toast{
+    position:fixed; bottom:100px; right:24px; background:var(--ink); color:var(--paper);
+    padding:16px 22px; border-radius:var(--radius); font-size:0.92rem; z-index:90;
+    transform:translateY(20px); opacity:0; pointer-events:none; transition:all .3s ease;
+    max-width:280px;
+  }
+  .toast.show{transform:translateY(0); opacity:1;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:900px){
+    .hero-grid, .about-grid, .contact-grid{grid-template-columns:1fr;}
+    .hero-visual{order:-1; max-width:220px; margin:0 auto;}
+    .booking{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr; gap:32px;}
+    nav ul{display:none;}
+    .menu-toggle{display:block;}
+    .nav-cta .btn-outline{display:none;}
+  }
+  @media (max-width:600px){
+    section{padding:64px 0;}
+    .field-row{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="container nav-wrap">
+    <a href="#inicio" class="logo">
+      <svg class="stamp-mini" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="18" stroke="#B8863B" stroke-width="1.5" stroke-dasharray="3 3"/>
+        <circle cx="20" cy="20" r="12" stroke="#1B2A3D" stroke-width="1.5"/>
+        <path d="M14 20l4 4 8-8" stroke="#697A5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Itzel Tenorio
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre-nosotros">Sobre nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contacto" class="btn btn-outline">Solicitar consulta</a>
+      <a href="https://wa.me/34000000000" target="_blank" rel="noopener" class="btn btn-whatsapp">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 004.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.1a8.2 8.2 0 01-4.18-1.14l-.3-.18-3.13.82.84-3.05-.2-.31a8.18 8.18 0 01-1.26-4.36c0-4.52 3.68-8.2 8.23-8.2 4.55 0 8.23 3.68 8.23 8.2 0 4.52-3.68 8.22-8.23 8.22zm4.5-6.15c-.25-.12-1.47-.72-1.7-.8-.23-.09-.4-.12-.56.12-.17.25-.65.8-.79.96-.15.17-.3.19-.55.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.22-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.3.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.36-.77-1.86-.2-.48-.41-.42-.56-.42-.14 0-.31-.02-.48-.02s-.44.06-.67.31c-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.6.13.18 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.2-.58.2-1.08.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+        WhatsApp
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menú" onclick="document.getElementById('mobile-nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-nav" style="display:none; flex-direction:column; padding:10px 28px 22px; gap:14px; border-top:1px solid var(--line);">
+    <a href="#inicio">Inicio</a>
+    <a href="#sobre-nosotros">Sobre nosotros</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#faq">Preguntas frecuentes</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Asesoría de extranjería en España</span>
+      <h1>Te ayudamos con tus trámites de extranjería en España</h1>
+      <p class="lead">Asesoramiento personalizado para regularizaciones, arraigos, renovaciones, nacionalidad y otros procedimientos. Atención online y presencial, en toda España.</p>
+      <div class="hero-actions">
+        <a href="#contacto" class="btn btn-primary">Solicitar consulta</a>
+        <a href="https://wa.me/34000000000" target="_blank" rel="noopener" class="btn btn-whatsapp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 004.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.1a8.2 8.2 0 01-4.18-1.14l-.3-.18-3.13.82.84-3.05-.2-.31a8.18 8.18 0 01-1.26-4.36c0-4.52 3.68-8.2 8.23-8.2 4.55 0 8.23 3.68 8.23 8.2 0 4.52-3.68 8.22-8.23 8.22z"/></svg>
+          Escríbenos
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Atención personalizada</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Videollamada desde cualquier parte de España</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Respuesta rápida por WhatsApp</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg class="stamp-large" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="150" cy="150" r="140" stroke="#B8863B" stroke-width="1.5" stroke-dasharray="2 6"/>
+        <circle cx="150" cy="150" r="118" stroke="#1B2A3D" stroke-width="1.2"/>
+        <circle cx="150" cy="150" r="96" stroke="#697A5E" stroke-width="1"/>
+        <text x="150" y="90" text-anchor="middle" font-family="Space Mono, monospace" font-size="11" fill="#1B2A3D" letter-spacing="3">NUEVA ETAPA</text>
+        <text x="150" y="220" text-anchor="middle" font-family="Space Mono, monospace" font-size="11" fill="#1B2A3D" letter-spacing="3">ESPAÑA</text>
+        <path d="M100 150 Q 125 120 150 150 T 200 150" stroke="#B8863B" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="100" cy="150" r="4" fill="#697A5E"/>
+        <circle cx="150" cy="150" r="4" fill="#697A5E"/>
+        <circle cx="200" cy="150" r="4" fill="#697A5E"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOBRE NOSOTROS ============ -->
+<section class="about" id="sobre-nosotros">
+  <div class="container about-grid">
+    <div>
+      <span class="eyebrow">Sobre nosotros</span>
+      <h2 style="margin-top:12px;">Un acompañamiento cercano, de principio a fin</h2>
+      <p>Somos un equipo de profesionales especializados en trámites de extranjería. Te acompañamos si tu deseo es establecerte en España.</p>
+      <p>Nuestro objetivo no es únicamente gestionar trámites, sino ofrecer una guía integral para construir un nuevo proyecto de vida, ya sea para estudiar, residir, trabajar, emprender, invertir o reunirte con la familia. Trabajamos de forma cercana y personalizada.</p>
+    </div>
+    <div>
+      <ul class="values-list">
+        <li>
+          <span class="num">✓</span>
+          <div><strong>Atención personalizada</strong><span>Cada caso se estudia de forma individual, sin respuestas genéricas.</span></div>
+        </li>
+        <li>
+          <span class="num">✓</span>
+          <div><strong>Información clara y honesta</strong><span>Te explicamos tus opciones reales, sin promesas falsas.</span></div>
+        </li>
+        <li>
+          <span class="num">✓</span>
+          <div><strong>Seguimiento durante todo el procedimiento</strong><span>No te dejamos solo tras presentar el expediente.</span></div>
+        </li>
+        <li>
+          <span class="num">✓</span>
+          <div><strong>Videollamada desde cualquier parte de España</strong><span>No importa dónde vivas, podemos atenderte.</span></div>
+        </li>
+        <li>
+          <span class="num">✓</span>
+          <div><strong>Respuesta rápida por WhatsApp</strong><span>Resolvemos tus dudas sin esperas interminables.</span></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMO TRABAJAMOS ============ -->
+<section id="como-trabajamos">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Nuestro proceso</span>
+      <h2>Cómo trabajamos</h2>
+      <p>Un procedimiento claro y ordenado, para que sepas en todo momento en qué punto está tu caso.</p>
+    </div>
+    <div class="route">
+      <div class="route-line"></div>
+      <div class="route-steps">
+        <div class="route-step">
+          <div class="route-pin">1</div>
+          <div><h3>Nos cuentas tu caso</h3><p>Escuchamos tu situación y tus objetivos en España.</p></div>
+        </div>
+        <div class="route-step">
+          <div class="route-pin">2</div>
+          <div><h3>Revisamos tu documentación</h3><p>Analizamos qué tienes y qué te falta para avanzar.</p></div>
+        </div>
+        <div class="route-step">
+          <div class="route-pin">3</div>
+          <div><h3>Elaboramos la estrategia</h3><p>Diseñamos el camino más adecuado a tu perfil.</p></div>
+        </div>
+        <div class="route-step">
+          <div class="route-pin">4</div>
+          <div><h3>Presentamos el expediente</h3><p>Gestionamos la presentación telemática o presencial.</p></div>
+        </div>
+        <div class="route-step">
+          <div class="route-pin">5</div>
+          <div><h3>Hacemos seguimiento hasta la resolución</h3><p>Te acompañamos hasta obtener respuesta de tu trámite.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICIOS ============ -->
+<section class="services" id="servicios">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Servicios</span>
+      <h2>Todo lo que necesitas para tu proyecto en España</h2>
+      <p>Consultoría integral para personas extranjeras que desean vivir, trabajar, emprender o invertir en España.</p>
+    </div>
+
+    <div class="service-tabs">
+      <button class="tab-btn active" onclick="showTab('extranjeria', this)">Trámites de extranjería</button>
+      <button class="tab-btn" onclick="showTab('empresas', this)">Empresas y autónomos</button>
+    </div>
+
+    <div id="tab-extranjeria" class="tab-panel active">
+      <div class="service-grid">
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l9 4-9 4-9-4 9-4z"/><path d="M3 12l9 4 9-4"/><path d="M3 17l9 4 9-4"/></svg>
+          <h3>Regularización extraordinaria</h3>
+          <p>Vías para regularizar tu situación cuando surgen medidas excepcionales.</p>
+        </div>
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="10" cy="7" r="4"/></svg>
+          <h3>Arraigo social</h3>
+          <p>Para quienes acreditan permanencia continuada e integración en España.</p>
+        </div>
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 018 0v2"/></svg>
+          <h3>Arraigo sociolaboral</h3>
+          <p>Regularización a través de una relación laboral y tiempo de estancia.</p>
+        </div>
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          <h3>Arraigo familiar</h3>
+          <p>Para progenitores de menores españoles o con vínculos familiares directos.</p>
+        </div>
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 2v4M17 2v4M3 10h18"/></svg>
+          <h3>Renovación de NIE/TIE</h3>
+          <p>Gestionamos la renovación de tu tarjeta antes de que caduque.</p>
+        </div>
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          <h3>Reagrupación familiar</h3>
+          <p>Para traer a tu familia a vivir contigo en España de forma legal.</p>
+        </div>
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <h3>Nacionalidad española</h3>
+          <p>Te guiamos en el proceso para obtener la nacionalidad por residencia.</p>
+        </div>
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
+          <h3>Recursos y escritos</h3>
+          <p>Redacción de recursos ante resoluciones denegatorias o silencios administrativos.</p>
+        </div>
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/><path d="M8 14h1M12 14h1M16 14h1"/></svg>
+          <h3>Citas y presentación telemática</h3>
+          <p>Nos encargamos de la obtención de citas y la presentación online.</p>
+        </div>
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+          <h3>Homologación de títulos</h3>
+          <p>Trámites para que tu titulación extranjera tenga validez en España.</p>
+        </div>
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+          <h3>Asesoría para empresas que contratan extranjeros</h3>
+          <p>Apoyo legal para empresas en la contratación de personal extranjero.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-empresas" class="tab-panel">
+      <div class="service-grid">
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+          <h3>Constitución de empresas</h3>
+          <p>Te acompañamos en la creación de tu sociedad en España, paso a paso.</p>
+        </div>
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          <h3>Alta de autónomos</h3>
+          <p>Gestionamos tu alta fiscal y en la Seguridad Social para empezar a facturar.</p>
+        </div>
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <h3>Orientación para apertura de negocios</h3>
+          <p>Resolvemos las dudas normativas antes de abrir tu negocio.</p>
+        </div>
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
+          <h3>Acompañamiento administrativo</h3>
+          <p>Trámites y gestiones ante organismos públicos durante la vida de tu empresa.</p>
+        </div>
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
+          <h3>Inversión inmobiliaria</h3>
+          <p>Asesoría para inversores extranjeros que quieren adquirir propiedad en España.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POR QUE ELEGIRNOS ============ -->
+<section id="por-que-elegirnos">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Por qué elegirnos</span>
+      <h2>Cercanía y claridad en cada paso</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+        <h3>Atención personalizada</h3>
+        <p>Ningún caso es una plantilla. Escuchamos y adaptamos la estrategia a ti.</p>
+      </div>
+      <div class="why-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
+        <h3>Información clara y honesta</h3>
+        <p>Te explicamos con transparencia qué opciones tienes y cuáles son sus plazos reales.</p>
+      </div>
+      <div class="why-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <h3>Seguimiento constante</h3>
+        <p>Te acompañamos durante todo el procedimiento, hasta la resolución.</p>
+      </div>
+      <div class="why-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 8l10 6 10-6"/></svg>
+        <h3>Videollamada en toda España</h3>
+        <p>Vivas donde vivas, podemos atenderte por videollamada.</p>
+      </div>
+      <div class="why-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+        <h3>Respuesta rápida por WhatsApp</h3>
+        <p>Escríbenos y recibe respuesta ágil a tus dudas, sin esperas.</p>
+      </div>
+      <div class="why-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+        <h3>Online y presencial</h3>
+        <p>Elige el formato de atención que mejor se adapte a ti.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq-preguntas">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2>Resolvemos tus dudas</h2>
+      <p>Estas son algunas de las preguntas que más recibimos. Iremos ampliando esta sección con más información migratoria.</p>
+    </div>
+    <div class="faq-list" id="faq">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Qué es el arraigo social y quién puede solicitarlo?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Es una vía de regularización para personas extranjeras que acreditan permanencia continuada en España y cumplen determinados requisitos. En tu consulta valoramos si es la opción adecuada para tu caso.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Cuánto tiempo tarda una renovación de TIE?<span class="plus">+</span></button>
+        <div class="faq-a"><p>El plazo depende del tipo de autorización y de la oficina donde se presente. Te indicamos los tiempos orientativos y hacemos seguimiento hasta que recibas respuesta.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Puedo hacer la consulta si no vivo cerca de vuestra oficina?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Sí. Atendemos por videollamada a personas en cualquier parte de España, con el mismo seguimiento que una consulta presencial.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Qué documentos necesito para una primera consulta?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Depende de tu situación. Al escribirnos por WhatsApp o el formulario, te indicamos exactamente qué documentación conviene reunir antes de la cita.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Ofrecen asesoría para empresas que quieren contratar extranjeros?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Sí, acompañamos a empresas en todo el proceso de contratación de personal extranjero, así como en constitución de sociedades y alta de autónomos.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CALENDARIO DE CITAS ============ -->
+<section id="cita">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Reserva tu cita</span>
+      <h2>Elige el día y la hora que mejor te venga</h2>
+      <p>Selecciona una franja disponible y confirma tu consulta. Te contactaremos para verificar los datos.</p>
+    </div>
+    <div class="booking">
+      <div class="booking-info">
+        <h3>Consulta personalizada</h3>
+        <p>30 minutos por videollamada o presencial, para conocer tu caso y orientarte sobre los siguientes pasos.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 2v4M17 2v4M3 10h18"/></svg> Horario de atención: Lunes a Viernes, 9:00–18:00</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 8l10 6 10-6"/></svg> Videollamada u oficina, tú eliges</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg> Confirmación por WhatsApp o correo</li>
+        </ul>
+      </div>
+      <div class="booking-cal">
+        <div class="cal-header">
+          <button aria-label="Mes anterior">‹</button>
+          <strong id="cal-month" style="font-family:'Space Mono',monospace; font-size:0.85rem; letter-spacing:0.05em;">JULIO 2026</strong>
+          <button aria-label="Mes siguiente">›</button>
+        </div>
+        <div class="cal-grid" id="cal-grid"></div>
+        <div class="slots" id="slots" style="display:none;">
+          <button class="slot" onclick="selectSlot(this)">09:30</button>
+          <button class="slot" onclick="selectSlot(this)">11:00</button>
+          <button class="slot" onclick="selectSlot(this)">13:00</button>
+          <button class="slot" onclick="selectSlot(this)">16:30</button>
+        </div>
+        <p class="cal-confirm" id="cal-confirm">Selecciona un día disponible para ver las horas libres.</p>
+        <a href="#contacto" class="btn btn-primary" style="margin-top:16px; width:100%; justify-content:center;">Continuar con estos datos</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="contact" id="contacto">
+  <div class="container contact-grid">
+    <div>
+      <span class="eyebrow">Contacto</span>
+      <h2 style="margin-top:12px; margin-bottom:26px;">Solicita tu consulta personalizada</h2>
+      <form id="consulta-form">
+        <div class="field-row">
+          <div>
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" required>
+          </div>
+          <div>
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" required>
+          </div>
+        </div>
+        <div>
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="field-row">
+          <div>
+            <label for="nacionalidad">Nacionalidad</label>
+            <input type="text" id="nacionalidad" name="nacionalidad" required>
+          </div>
+          <div>
+            <label for="tipo">Tipo de consulta</label>
+            <select id="tipo" name="tipo" required>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option>Regularización extraordinaria</option>
+              <option>Arraigo social</option>
+              <option>Arraigo sociolaboral</option>
+              <option>Arraigo familiar</option>
+              <option>Renovación de NIE/TIE</option>
+              <option>Reagrupación familiar</option>
+              <option>Nacionalidad española</option>
+              <option>Recursos y escritos</option>
+              <option>Homologación de títulos</option>
+              <option>Empresas y autónomos</option>
+              <option>Otro</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="descripcion">Cuéntanos tu caso</label>
+          <textarea id="descripcion" name="descripcion" placeholder="Describe brevemente tu situación actual y qué necesitas."></textarea>
+        </div>
+        <p class="form-note">Al enviar este formulario aceptas nuestra política de privacidad. Responderemos en un plazo breve por correo o WhatsApp.</p>
+        <button type="submit" class="btn btn-primary" style="justify-content:center;">Enviar solicitud</button>
+      </form>
+    </div>
+    <div class="contact-details">
+      <div class="contact-detail">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><h4>Oficina</h4><p>[Dirección de la oficina — pendiente de confirmar]</p></div>
+      </div>
+      <div class="contact-detail">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 2v4M17 2v4M3 10h18"/></svg>
+        <div><h4>Horario de atención</h4><p>Lunes a Viernes, 9:00–18:00</p></div>
+      </div>
+      <div class="contact-detail">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.68 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0122 16.92z"/></svg>
+        <div><h4>Teléfono / WhatsApp</h4><p>+34 000 000 000</p></div>
+      </div>
+      <div class="contact-detail">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+        <div><h4>Correo</h4><p>itzeltenu@gmail.com</p></div>
+      </div>
+      <div>
+        <h4 style="margin-bottom:12px;">Síguenos</h4>
+        <div class="social-row">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4V8h4v1.5A6 6 0 0116 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Itzel Tenorio</div>
+        <p>Consultoría integral para personas extranjeras que desean vivir, trabajar, emprender o invertir en España.</p>
+      </div>
+      <div>
+        <h5>Navegación</h5>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#sobre-nosotros">Sobre nosotros</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contacto directo</h5>
+        <ul>
+          <li><a href="https://wa.me/34611135663" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="mailto:itzeltenu@gmail.com">itzeltenu@gmail.com</a></li>
+          <li><a href="#cita">Reservar cita</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Itzel Tenorio. Todos los derechos reservados.</span>
+      <div class="legal-links">
+        <a href="#" onclick="openModal('aviso'); return false;">Aviso legal</a>
+        <a href="#" onclick="openModal('privacidad'); return false;">Política de privacidad</a>
+        <a href="#" onclick="openModal('cookies'); return false;">Política de cookies</a>
+        <a href="#" onclick="openModal('condiciones'); return false;">Condiciones de uso</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ WHATSAPP FLOAT ============ -->
+<a href="https://wa.me/34000000000" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 004.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.1a8.2 8.2 0 01-4.18-1.14l-.3-.18-3.13.82.84-3.05-.2-.31a8.18 8.18 0 01-1.26-4.36c0-4.52 3.68-8.2 8.23-8.2 4.55 0 8.23 3.68 8.23 8.2 0 4.52-3.68 8.22-8.23 8.22zm4.5-6.15c-.25-.12-1.47-.72-1.7-.8-.23-.09-.4-.12-.56.12-.17.25-.65.8-.79.96-.15.17-.3.19-.55.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.22-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.3.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.36-.77-1.86-.2-.48-.41-.42-.56-.42-.14 0-.31-.02-.48-.02s-.44.06-.67.31c-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.6.13.18 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.2-.58.2-1.08.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+</a>
+
+<!-- ============ LEGAL MODALS ============ -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
