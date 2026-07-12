@@ -40,6 +40,7 @@
     line-height:1.15;
   }
   a{color:inherit;}
+  p{text-align:justify; hyphens:auto; -webkit-hyphens:auto; overflow-wrap:break-word;}
   .eyebrow{
     font-family:'Space Mono', monospace;
     font-size:0.72rem;
@@ -94,8 +95,8 @@
     text-decoration:none; border:1px solid transparent;
     transition:transform .15s ease, background .15s ease, border-color .15s ease;
   }
-  .btn-primary{background:var(--ink); color:var(--paper);}
-  .btn-primary:hover{background:var(--ink-soft); transform:translateY(-1px);}
+  .btn-primary{background:var(--brass); color:var(--ink);}
+  .btn-primary:hover{background:var(--brass-light); transform:translateY(-1px);}
   .btn-outline{border-color:var(--ink); color:var(--ink); background:transparent;}
   .btn-outline:hover{background:var(--ink); color:var(--paper);}
   .btn-whatsapp{background:#3E5C3A; color:var(--paper);}
@@ -123,6 +124,11 @@
   .hero-actions{
     display:flex; gap:16px; margin-top:34px; flex-wrap:wrap;
   }
+  .hero-actions .btn{
+    padding:15px 30px; font-size:1rem; box-shadow:0 6px 18px rgba(27,42,61,0.12);
+  }
+  .hero-actions .btn-primary{box-shadow:0 6px 18px rgba(184,134,59,0.35);}
+  .hero-actions .btn-whatsapp{box-shadow:0 6px 18px rgba(62,92,58,0.3);}
   .hero-trust{
     display:flex; gap:28px; margin-top:48px; flex-wrap:wrap;
   }
@@ -192,7 +198,7 @@
   .service-card:hover{border-color:var(--brass); transform:translateY(-2px);}
   .service-card .icon{width:30px; height:30px; color:var(--sage); margin-bottom:14px;}
   .service-card h3{font-size:1.04rem; margin-bottom:8px; font-weight:600;}
-  .service-card p{margin:0; font-size:0.9rem; color:var(--ink-soft);}
+  .service-card p{margin:0; font-size:0.9rem; color:var(--ink-soft); text-align:justify; hyphens:auto; -webkit-hyphens:auto; overflow-wrap:break-word;}
   .tab-panel{display:none;}
   .tab-panel.active{display:block;}
 
@@ -201,7 +207,7 @@
   .why-card{padding:6px;}
   .why-card .icon{width:34px; height:34px; color:var(--brass); margin-bottom:16px;}
   .why-card h3{font-size:1.06rem; margin-bottom:8px;}
-  .why-card p{margin:0; color:var(--ink-soft); font-size:0.93rem;}
+  .why-card p{margin:0; color:var(--ink-soft); font-size:0.93rem; text-align:justify; hyphens:auto; -webkit-hyphens:auto; overflow-wrap:break-word;}
 
   /* ---------- FAQ ---------- */
   .faq{background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
@@ -388,8 +394,8 @@
   <div class="container hero-grid">
     <div>
       <span class="eyebrow">Asesoría de extranjería en España</span>
-      <h1>Te ayudamos con tus trámites de extranjería en España</h1>
-      <p class="lead">Asesoramiento personalizado para regularizaciones, arraigos, renovaciones, nacionalidad y otros procedimientos. Atención online y presencial, en toda España.</p>
+      <h1>Especialistas en Extranjería e Inmigración en España</h1>
+      <p class="lead">Ayudamos a estudiantes, trabajadores, familias e inversionistas a obtener su residencia en España de forma segura y acompañada.</p>
       <div class="hero-actions">
         <a href="#contacto" class="btn btn-primary">Solicitar consulta</a>
         <a href="https://wa.me/34000000000" target="_blank" rel="noopener" class="btn btn-whatsapp">
@@ -424,23 +430,23 @@
   <div class="container about-grid">
     <div>
       <span class="eyebrow">Sobre nosotros</span>
-      <h2 style="margin-top:12px;">Un acompañamiento cercano, de principio a fin</h2>
+      <h2 style="margin-top:12px;">Un acompañamiento cercano, de principio a fin.</h2>
       <p>Somos un equipo de profesionales especializados en trámites de extranjería. Te acompañamos si tu deseo es establecerte en España.</p>
-      <p>Nuestro objetivo no es únicamente gestionar trámites, sino ofrecer una guía integral para construir un nuevo proyecto de vida, ya sea para estudiar, residir, trabajar, emprender, invertir o reunirte con la familia. Trabajamos de forma cercana y personalizada.</p>
+      <p>Nuestro objetivo no es únicamente gestionar trámites, sino ofrecer una guía integral para construir un nuevo proyecto de vida, ya sea para estudiar, residir, trabajar, reunirte con la familia, emprender o invertir en España. Trabajamos desde el primer momento de forma cercana y personalizada.</p>
     </div>
     <div>
       <ul class="values-list">
         <li>
           <span class="num">✓</span>
-          <div><strong>Atención personalizada</strong><span>Cada caso se estudia de forma individual, sin respuestas genéricas.</span></div>
+          <div><strong>Atención personalizada</strong><span>Nos comprometemos con cada caso, con empatía y respeto, sin respuestas genéricas.</span></div>
         </li>
         <li>
           <span class="num">✓</span>
-          <div><strong>Información clara y honesta</strong><span>Te explicamos tus opciones reales, sin promesas falsas.</span></div>
+          <div><strong>Información clara y honesta</strong><span>Desde el principio, te explicamos con honestidad tus opciones reales, sin promesas falsas.</span></div>
         </li>
         <li>
           <span class="num">✓</span>
-          <div><strong>Seguimiento durante todo el procedimiento</strong><span>No te dejamos solo tras presentar el expediente.</span></div>
+          <div><strong>Seguimiento durante todo el procedimiento</strong><span>No te dejamos solo tras presentar el expediente, te acompañamos de principio a fin.</span></div>
         </li>
         <li>
           <span class="num">✓</span>
@@ -497,40 +503,25 @@
     <div class="section-head">
       <span class="eyebrow">Servicios</span>
       <h2>Todo lo que necesitas para tu proyecto en España</h2>
-      <p>Consultoría integral para personas extranjeras que desean vivir, trabajar, emprender o invertir en España.</p>
+      <p>Ofrecemos consultoría integral para personas extranjeras que desean vivir, trabajar, estudiar, emprender o invertir en España.</p>
     </div>
 
     <div class="service-tabs">
       <button class="tab-btn active" onclick="showTab('extranjeria', this)">Trámites de extranjería</button>
-      <button class="tab-btn" onclick="showTab('empresas', this)">Empresas y autónomos</button>
+      <button class="tab-btn" onclick="showTab('empresas', this)">Emprendedores e inversionistas</button>
     </div>
 
     <div id="tab-extranjeria" class="tab-panel active">
       <div class="service-grid">
         <div class="service-card">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l9 4-9 4-9-4 9-4z"/><path d="M3 12l9 4 9-4"/><path d="M3 17l9 4 9-4"/></svg>
-          <h3>Regularización extraordinaria</h3>
-          <p>Vías para regularizar tu situación cuando surgen medidas excepcionales.</p>
-        </div>
-        <div class="service-card">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="10" cy="7" r="4"/></svg>
-          <h3>Arraigo social</h3>
-          <p>Para quienes acreditan permanencia continuada e integración en España.</p>
+          <h3>Arraigos</h3>
+          <p>Regularización a través de arraigo social, laboral o familiar, según tu situación en España.</p>
         </div>
         <div class="service-card">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 018 0v2"/></svg>
-          <h3>Arraigo sociolaboral</h3>
-          <p>Regularización a través de una relación laboral y tiempo de estancia.</p>
-        </div>
-        <div class="service-card">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-          <h3>Arraigo familiar</h3>
-          <p>Para progenitores de menores españoles o con vínculos familiares directos.</p>
-        </div>
-        <div class="service-card">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 2v4M17 2v4M3 10h18"/></svg>
-          <h3>Renovación de NIE/TIE</h3>
-          <p>Gestionamos la renovación de tu tarjeta antes de que caduque.</p>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+          <h3>Estancia por estudios</h3>
+          <p>Autorización de estancia para cursar estudios, prácticas o investigación en España.</p>
         </div>
         <div class="service-card">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
@@ -543,54 +534,48 @@
           <p>Te guiamos en el proceso para obtener la nacionalidad por residencia.</p>
         </div>
         <div class="service-card">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
-          <h3>Recursos y escritos</h3>
-          <p>Redacción de recursos ante resoluciones denegatorias o silencios administrativos.</p>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M8 9l2 2 4-4"/></svg>
+          <h3>Nómada digital</h3>
+          <p>Visado y autorización para trabajar de forma remota para empresas extranjeras desde España.</p>
         </div>
         <div class="service-card">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/><path d="M8 14h1M12 14h1M16 14h1"/></svg>
-          <h3>Citas y presentación telemática</h3>
-          <p>Nos encargamos de la obtención de citas y la presentación online.</p>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <h3>Residencia no lucrativa</h3>
+          <p>Residencia para quienes cuentan con medios económicos propios, sin necesidad de trabajar en España.</p>
         </div>
         <div class="service-card">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
-          <h3>Homologación de títulos</h3>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
+          <h3>Homologaciones</h3>
           <p>Trámites para que tu titulación extranjera tenga validez en España.</p>
-        </div>
-        <div class="service-card">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
-          <h3>Asesoría para empresas que contratan extranjeros</h3>
-          <p>Apoyo legal para empresas en la contratación de personal extranjero.</p>
         </div>
       </div>
     </div>
 
     <div id="tab-empresas" class="tab-panel">
+      <div class="section-head" style="margin-bottom:32px;">
+        <h3 style="font-size:1.3rem; margin-bottom:14px;">Consultoría para emprendedores e inversionistas</h3>
+        <p style="color:var(--ink-soft); font-size:1rem;">Acompañamos a emprendedores, profesionales e inversionistas extranjeros durante todo el proceso de creación, desde la planificación de su proyecto hasta el inicio de su actividad en España. Coordinamos cada etapa para que puedas emprender con seguridad y sin complicaciones.</p>
+      </div>
       <div class="service-grid">
         <div class="service-card">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
-          <h3>Constitución de empresas</h3>
-          <p>Te acompañamos en la creación de tu sociedad en España, paso a paso.</p>
-        </div>
-        <div class="service-card">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-          <h3>Alta de autónomos</h3>
-          <p>Gestionamos tu alta fiscal y en la Seguridad Social para empezar a facturar.</p>
-        </div>
-        <div class="service-card">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-          <h3>Orientación para apertura de negocios</h3>
-          <p>Resolvemos las dudas normativas antes de abrir tu negocio.</p>
+          <h3>Acompañamiento integral</h3>
+          <p>Analizamos y asesoramos tu proyecto para emprender o invertir en España, planificando con certeza los pasos a seguir.</p>
+        </div>
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+          <h3>Constitución de empresa e inicio de actividad</h3>
+          <p>Te ayudamos con la elección de la forma jurídica, la constitución de tu sociedad o el alta como autónomo, así como la reserva de denominación social, la obtención de NIF y la apertura de cuenta bancaria.</p>
         </div>
         <div class="service-card">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
-          <h3>Acompañamiento administrativo</h3>
-          <p>Trámites y gestiones ante organismos públicos durante la vida de tu empresa.</p>
+          <h3>Trámites de inicio</h3>
+          <p>Gestionamos el alta en Hacienda y en la Seguridad Social, además de la tramitación de licencias o registros de marca.</p>
         </div>
         <div class="service-card">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
-          <h3>Inversión inmobiliaria</h3>
-          <p>Asesoría para inversores extranjeros que quieren adquirir propiedad en España.</p>
+          <h3>Inversión en España</h3>
+          <p>Ofrecemos asesoría a inversionistas extranjeros para la compra de inmuebles y coordinamos todos los trámites relacionados con la inversión.</p>
         </div>
       </div>
     </div>
@@ -608,7 +593,7 @@
       <div class="why-card">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
         <h3>Atención personalizada</h3>
-        <p>Ningún caso es una plantilla. Escuchamos y adaptamos la estrategia a ti.</p>
+        <p>Ningún caso es una plantilla. Te escuchamos con atención, nos involucramos en tu caso y adaptamos la estrategia más favorable.</p>
       </div>
       <div class="why-card">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
@@ -658,15 +643,15 @@
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">¿Puedo hacer la consulta si no vivo cerca de vuestra oficina?<span class="plus">+</span></button>
-        <div class="faq-a"><p>Sí. Atendemos por videollamada a personas en cualquier parte de España, con el mismo seguimiento que una consulta presencial.</p></div>
+        <div class="faq-a"><p>Sí. Atendemos por videollamada a personas en cualquier parte del mundo, con el mismo seguimiento que una consulta presencial.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">¿Qué documentos necesito para una primera consulta?<span class="plus">+</span></button>
         <div class="faq-a"><p>Depende de tu situación. Al escribirnos por WhatsApp o el formulario, te indicamos exactamente qué documentación conviene reunir antes de la cita.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">¿Ofrecen asesoría para empresas que quieren contratar extranjeros?<span class="plus">+</span></button>
-        <div class="faq-a"><p>Sí, acompañamos a empresas en todo el proceso de contratación de personal extranjero, así como en constitución de sociedades y alta de autónomos.</p></div>
+        <button class="faq-q" onclick="toggleFaq(this)">¿Ofrecen asesoría para personas que quieren emprender o invertir en España?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Sí, acompañamos a personas extranjeras que desean emprender, invertir o iniciar su actividad profesional en España, incluyendo la constitución de sociedades y el alta de autónomos.</p></div>
       </div>
     </div>
   </div>
@@ -740,16 +725,14 @@
             <label for="tipo">Tipo de consulta</label>
             <select id="tipo" name="tipo" required>
               <option value="" disabled selected>Selecciona una opción</option>
-              <option>Regularización extraordinaria</option>
-              <option>Arraigo social</option>
-              <option>Arraigo sociolaboral</option>
-              <option>Arraigo familiar</option>
-              <option>Renovación de NIE/TIE</option>
+              <option>Arraigos</option>
+              <option>Estancia por estudios</option>
               <option>Reagrupación familiar</option>
               <option>Nacionalidad española</option>
-              <option>Recursos y escritos</option>
-              <option>Homologación de títulos</option>
-              <option>Empresas y autónomos</option>
+              <option>Nómada digital</option>
+              <option>Residencia no lucrativa</option>
+              <option>Homologaciones</option>
+              <option>Emprendedores e inversionistas</option>
               <option>Otro</option>
             </select>
           </div>
