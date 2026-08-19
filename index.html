@@ -111,7 +111,7 @@
     overflow:hidden;
   }
   .hero-grid{
-    display:grid; grid-template-columns:1.15fr 0.85fr; gap:64px; align-items:center;
+    max-width:680px;
   }
   .hero h1{
     font-size:clamp(2.4rem, 4.4vw, 3.6rem);
@@ -134,12 +134,6 @@
   }
   .hero-trust div{font-size:0.86rem; color:var(--ink-soft); display:flex; align-items:center; gap:8px;}
   .hero-trust svg{width:18px; height:18px; color:var(--sage); flex-shrink:0;}
-  .hero-visual{
-    display:flex; align-items:center; justify-content:center; position:relative;
-  }
-  .stamp-large{width:100%; max-width:340px; animation:rotate-slow 40s linear infinite;}
-  @keyframes rotate-slow{ to { transform:rotate(360deg);} }
-  @media (prefers-reduced-motion:reduce){ .stamp-large{animation:none;} }
 
   /* ---------- SECTION HEADERS ---------- */
   .section-head{max-width:640px; margin-bottom:56px;}
@@ -322,8 +316,7 @@
 
   /* ---------- RESPONSIVE ---------- */
   @media (max-width:900px){
-    .hero-grid, .contact-grid{grid-template-columns:1fr;}
-    .hero-visual{order:-1; max-width:220px; margin:0 auto;}
+    .contact-grid{grid-template-columns:1fr;}
     .booking{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr; gap:32px;}
     nav ul{display:none;}
@@ -387,19 +380,6 @@
           Escríbenos
         </a>
       </div>
-    </div>
-    <div class="hero-visual">
-      <svg class="stamp-large" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="150" cy="150" r="140" stroke="#B8863B" stroke-width="1.5" stroke-dasharray="2 6"/>
-        <circle cx="150" cy="150" r="118" stroke="#1B2A3D" stroke-width="1.2"/>
-        <circle cx="150" cy="150" r="96" stroke="#697A5E" stroke-width="1"/>
-        <text x="150" y="90" text-anchor="middle" font-family="Space Mono, monospace" font-size="11" fill="#1B2A3D" letter-spacing="3">NUEVA ETAPA</text>
-        <text x="150" y="220" text-anchor="middle" font-family="Space Mono, monospace" font-size="11" fill="#1B2A3D" letter-spacing="3">ESPAÑA</text>
-        <path d="M100 150 Q 125 120 150 150 T 200 150" stroke="#B8863B" stroke-width="2" fill="none" stroke-linecap="round"/>
-        <circle cx="100" cy="150" r="4" fill="#697A5E"/>
-        <circle cx="150" cy="150" r="4" fill="#697A5E"/>
-        <circle cx="200" cy="150" r="4" fill="#697A5E"/>
-      </svg>
     </div>
   </div>
 </section>
