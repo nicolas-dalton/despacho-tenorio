@@ -50,46 +50,6 @@ const legalContent = {
     }
   }
 
-  // ---- simple calendar mock ----
-  const dow = ['L','M','X','J','V','S','D'];
-  const calGrid = document.getElementById('cal-grid');
-  const daysInMonth = 31; // July
-  const startOffset = 2; // July 1 2026 is a Wednesday -> offset from Monday
-  dow.forEach(d => {
-    const el = document.createElement('div');
-    el.className = 'dow'; el.textContent = d;
-    calGrid.appendChild(el);
-  });
-  for(let i=0;i<startOffset;i++){
-    calGrid.appendChild(document.createElement('div'));
-  }
-  const unavailable = [4,5,11,12,18,19,25,26]; // weekends roughly
-  for(let d=1; d<=daysInMonth; d++){
-    const el = document.createElement('button');
-    el.className = 'cal-day';
-    el.textContent = d;
-    if(d < 9 || unavailable.includes(d)){
-      el.classList.add('disabled');
-      el.disabled = true;
-    } else {
-      el.classList.add('avail');
-      el.onclick = () => selectDay(el, d);
-    }
-    calGrid.appendChild(el);
-  }
-  function selectDay(el, d){
-    document.querySelectorAll('.cal-day').forEach(c => c.classList.remove('selected'));
-    el.classList.add('selected');
-    document.getElementById('slots').style.display = 'flex';
-    document.getElementById('cal-confirm').textContent = `Horas disponibles para el ${d} de julio de 2026:`;
-    document.querySelectorAll('.slot').forEach(s => s.classList.remove('active'));
-  }
-  function selectSlot(el){
-    document.querySelectorAll('.slot').forEach(s => s.classList.remove('active'));
-    el.classList.add('active');
-    document.getElementById('cal-confirm').textContent = `Cita seleccionada a las ${el.textContent}. Confirma tus datos en el formulario de contacto.`;
-  }
-
   // ---- form submit (static demo) ----
   document.getElementById('consulta-form').addEventListener('submit', function(e){
     e.preventDefault();

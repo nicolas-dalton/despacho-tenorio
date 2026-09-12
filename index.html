@@ -206,38 +206,6 @@
   .faq-a{max-height:0; overflow:hidden; transition:max-height .25s ease;}
   .faq-a p{padding-bottom:22px; margin:0; color:var(--ink-soft); font-size:0.97rem; max-width:70ch;}
 
-  /* ---------- CITA / CALENDAR ---------- */
-  .booking{
-    display:grid; grid-template-columns:1fr 1fr; gap:0;
-    border:1px solid var(--line); background:var(--paper); border-radius:var(--radius); overflow:hidden;
-  }
-  .booking-info{padding:44px; background:var(--ink); color:var(--parchment);}
-  .booking-info h3{color:var(--paper); font-size:1.5rem;}
-  .booking-info p{color:#C7CEDA; margin-top:14px; font-size:0.96rem;}
-  .booking-info ul{list-style:none; padding:0; margin:26px 0 0; display:flex; flex-direction:column; gap:14px;}
-  .booking-info li{display:flex; gap:10px; font-size:0.92rem; color:#DDE2EA;}
-  .booking-info svg{width:18px; height:18px; color:var(--brass-light); flex-shrink:0;}
-  .booking-cal{padding:44px;}
-  .cal-header{display:flex; align-items:center; justify-content:space-between; margin-bottom:18px;}
-  .cal-header button{background:none; border:1px solid var(--line); border-radius:50%; width:30px; height:30px;}
-  .cal-grid{display:grid; grid-template-columns:repeat(7,1fr); gap:6px; text-align:center;}
-  .cal-grid .dow{font-family:'Space Mono',monospace; font-size:0.68rem; color:var(--ink-soft); padding-bottom:6px;}
-  .cal-day{
-    aspect-ratio:1; display:flex; align-items:center; justify-content:center;
-    border-radius:50%; font-size:0.88rem; border:1px solid transparent; background:none;
-    color:var(--charcoal);
-  }
-  .cal-day.avail{background:var(--parchment-deep); cursor:pointer;}
-  .cal-day.avail:hover{background:var(--brass-light); color:var(--ink);}
-  .cal-day.selected{background:var(--brass); color:var(--paper); font-weight:700;}
-  .cal-day.disabled{color:#C9C2B0;}
-  .slots{display:flex; gap:10px; margin-top:20px; flex-wrap:wrap;}
-  .slot{
-    padding:8px 14px; border:1px solid var(--line); border-radius:999px; font-size:0.85rem; background:none;
-  }
-  .slot.active{background:var(--ink); color:var(--paper); border-color:var(--ink);}
-  .cal-confirm{margin-top:22px; font-size:0.86rem; color:var(--ink-soft);}
-
   /* ---------- CONTACTO / FORM ---------- */
   .contact{background:var(--paper); border-top:1px solid var(--line);}
   .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
@@ -317,7 +285,6 @@
   /* ---------- RESPONSIVE ---------- */
   @media (max-width:900px){
     .contact-grid{grid-template-columns:1fr;}
-    .booking{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr; gap:32px;}
     nav ul{display:none;}
     .menu-toggle{display:block;}
@@ -590,44 +557,6 @@
   </div>
 </section>
 
-<!-- ============ CALENDARIO DE CITAS ============ -->
-<section id="cita">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Reserva tu cita</span>
-      <h2>Elige el día y la hora que mejor te venga</h2>
-      <p>Selecciona una franja disponible y confirma tu consulta. Te contactaremos para verificar los datos.</p>
-    </div>
-    <div class="booking">
-      <div class="booking-info">
-        <h3>Consulta personalizada</h3>
-        <p>30 minutos por videollamada o presencial, para conocer tu caso y orientarte sobre los siguientes pasos.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 2v4M17 2v4M3 10h18"/></svg> Horario de atención: Lunes a Viernes, 9:00–20:00</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 8l10 6 10-6"/></svg> Videollamada u oficina, tú eliges</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg> Confirmación por WhatsApp o correo</li>
-        </ul>
-      </div>
-      <div class="booking-cal">
-        <div class="cal-header">
-          <button aria-label="Mes anterior">‹</button>
-          <strong id="cal-month" style="font-family:'Space Mono',monospace; font-size:0.85rem; letter-spacing:0.05em;">JULIO 2026</strong>
-          <button aria-label="Mes siguiente">›</button>
-        </div>
-        <div class="cal-grid" id="cal-grid"></div>
-        <div class="slots" id="slots" style="display:none;">
-          <button class="slot" onclick="selectSlot(this)">09:30</button>
-          <button class="slot" onclick="selectSlot(this)">11:00</button>
-          <button class="slot" onclick="selectSlot(this)">13:00</button>
-          <button class="slot" onclick="selectSlot(this)">16:30</button>
-        </div>
-        <p class="cal-confirm" id="cal-confirm">Selecciona un día disponible para ver las horas libres.</p>
-        <a href="#contacto" class="btn btn-primary" style="margin-top:16px; width:100%; justify-content:center;">Continuar con estos datos</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ CONTACTO ============ -->
 <section class="contact" id="contacto">
   <div class="container contact-grid">
@@ -730,7 +659,6 @@
         <ul>
           <li><a href="https://wa.me/34614566454" target="_blank" rel="noopener">WhatsApp</a></li>
           <li><a href="mailto:info@conectaespaña.es">info@conectaespaña.es</a></li>
-          <li><a href="#cita">Reservar cita</a></li>
         </ul>
       </div>
     </div>
